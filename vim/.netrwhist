@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/seif/Documents/Server'
+let g:netrw_dirhist_2='/Users/seif/Documents'
+let g:netrw_dirhist_3='/Users/seif/Documents/Webapp'
+let g:netrw_dirhist_4='/Users/seif/Documents/Server/production/nginx'
+let g:netrw_dirhist_5='/Users/seif/Documents/Server/production/nginx/ssl'
+let g:netrw_dirhist_6='/Users/seif/.oh-my-zsh'
+let g:netrw_dirhist_7='/Users/seif/Documents/launchbox'
+let g:netrw_dirhist_8='/Users/seif/.vim'
