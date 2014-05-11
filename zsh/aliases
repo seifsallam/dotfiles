@@ -1,0 +1,157 @@
+##################################
+# Aliases
+##################################
+
+#
+# APPS
+#
+alias fish="exec '/Applications/fish.app/Contents/Resources/base/bin/fish'"
+
+#
+# VIM
+#
+alias evim="vim ~/.vimrc"
+
+#
+# SSH
+#
+# alias ssh-aws 'ssh deployer@ec2-54-200-64-10.us-west-2.compute.amazonaws.com'
+# alias ssh-aws-admin 'ssh -i ~/aws-asknative.pem ubuntu@ec2-54-200-64-10.us-west-2.compute.amazonaws.com'
+alias ssh-webapp='ssh deployer@asknative.com'       # 162.242.239.137
+alias ssh-prod='ssh deployer@api.asknative.com'     # 162.242.220.177
+alias ssh-stag='ssh deployer@staging.asknative.com' # 162.242.233.158
+alias ssh-blog='ssh ghost@journey.asknative.com'    # 162.242.243.203
+
+#
+# RBENV
+#
+alias evars='vim ~/.rbenv/vars'
+alias pvars='rbenv vars'
+alias ruby-list='rbenv install --list'
+
+#
+# BUNDLER
+#
+alias be='bundle exec'
+alias bi='bundle install'
+alias bil='bundle install --local'
+alias bl='bundle list'
+alias bu='bundle update'
+alias bp='bundle package'
+
+#
+# RAILS
+#
+alias ts='thin start'     # thin server
+alias fs='foreman start'
+alias fd='foreman start -f Procfile.dev'
+alias devlog='tail -f log/development.log'
+alias taild='tail -f log/development.log' # tail dev log
+alias ccache='rm -rf tmp/cache/'
+
+#
+# MINA
+#
+alias mds='mina stag deploy'
+alias mdp='mina prod deploy'    # P.S. Append `force_assets=1` to force asset compilation
+
+alias mdus='mina stag deploy:force_unlock'
+alias mdup='mina prod deploy:force_unlock'
+
+alias mls='mina stag logs'
+alias mlp='mina prod logs'
+
+alias mvs='mina stag vars'
+alias mvp='mina prod vars'
+
+alias mcs='mina stag console'
+alias mcp='mina prod console'
+
+#
+# GRUNT
+#
+alias gs='grunt server'
+alias gsf='grunt server --force'        # Force running server
+alias gb='grunt build'                  # Build production version
+alias gbs='grunt server:dist'           # Build production version and run locally
+
+#
+# BOWER
+#
+alias boi='bower install'               # Install
+alias bois='bower install --save'       # Install and Save
+alias bou='bower update'                # Update packages
+alias bol='bower list'                  # Bower list packages
+
+#
+# NPM
+#
+alias ns='npm start'                    # Start
+alias nt='npm test'                     # Run test
+alias nd='npm run-script debug'         # Start in debug mode
+alias ni='npm install'                  # Install
+alias nig='npm install -g'              # Install global (For commandline tools)
+alias nis='npm install --save'          # Install and save
+alias nid='npm install --save-dev'      # Install and save as development dependency
+alias nisd='nid'
+
+
+
+#
+# BREW
+#
+# alias bup='brew update ;and brew upgrade'
+# alias bout='brew outdated'
+# alias bin='brew install'
+# alias brm='brew uninstall'
+# alias bls='brew list'
+# alias bsr='brew search'
+# alias binf='brew info'
+# alias bdr='brew doctor'
+
+#
+# Heroku
+#
+# alias h='heroku'
+# alias hl='heroku list'
+# alias hi='heroku info'
+# alias ho='heroku open'
+
+## dynos and workers
+# alias hd='heroku dynos'
+# alias hw='heroku workers'
+
+## rake console
+# alias hr='heroku rake'
+# alias hcon='heroku console'
+
+## new and restart
+# alias hnew='heroku create'
+# alias hrestart='heroku restart'
+#
+## logs
+# alias hlog='heroku logs'
+# alias hlogs='heroku logs'
+
+## maint
+# alias hon='heroku maintenance:on'
+# alias hoff='heroku maintenance:off'
+
+## heroku configs
+# alias hc='heroku config'
+# alias hca='heroku config:add'
+# alias hcr='heroku config:remove'
+# alias hcc='heroku config:clear'
+
+#
+# MISC
+#
+alias ca='clear all'
+alias gph='git push heroku master' # Push on heroku master
+alias empty-trash='sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash'
+alias flush-dns='dscacheutil -flushcache'
+alias simple-server='python -m SimpleHTTPServer 9000'
+alias hide-desktop='defaults write com.apple.finder CreateDesktop -bool false ;and killall Finder'
+alias show-desktop='defaults write com.apple.finder CreateDesktop -bool true ;and killall Finder'
+alias disable-longpress-subl='defaults write com.sublimetext.3 ApplePressAndHoldEnabled -bool false'
+alias count-files='find -P . -type f | rev | cut -d/ -f2- | rev | cut -d/ -f1-2 | cut -d/ -f2- | sort | uniq -c'
