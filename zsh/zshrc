@@ -8,13 +8,6 @@ export ZSH=$HOME/.oh-my-zsh
 # ZSH_THEME="robbyrussell"
 ZSH_THEME='agnoster'
 
-# Example aliases
-alias zshconfig='vim ~/.zshrc'
-alias ohmyzsh='vim ~/.oh-my-zsh'
-alias warconfig='vim ~/.warprc'
-alias szsh='source ~/.zshrc'
-alias ealiases='vim ~/.aliases'
-
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -59,7 +52,7 @@ DEFAULT_USER='seif'
 plugins=(brew gem git gitfast git-extras last-working-dir osx node npm rails redis-cli ruby sublime web-search wd zeus zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
-source ~/.nvm/nvm.sh
+# source ~/.nvm/nvm.sh
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 # source $(brew --prefix nvm)/nvm.sh
 
