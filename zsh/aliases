@@ -1,18 +1,33 @@
-##################################
-# Aliases
-##################################
+#############################
+######### Aliases ###########
+#############################
 
-#
-# APPS
-#
-alias fish="exec '/Applications/fish.app/Contents/Resources/base/bin/fish'"
+#############################
+# Util                      #
+#############################
 
+# apps
 #
-# VIM
+alias vag='vagrant'
+alias mux='tmuxinator'
+
+# bash
+#
+alias ebash='vim ~/.bash_profile'
+alias sbash='source ~/.bash_profile'
+
+# zsh
+#
+alias zshconfig='vim ~/.zshrc'
+alias ohmyzsh='vim ~/.oh-my-zsh'
+alias warpconfig='vim ~/.warprc'
+alias szsh='source ~/.zshrc'
+alias ealiases='vim ~/.aliases'
+
+# vim
 #
 alias evim="vim ~/.vimrc"
 
-#
 # SSH
 #
 # alias ssh-aws 'ssh deployer@ec2-54-200-64-10.us-west-2.compute.amazonaws.com'
@@ -22,83 +37,7 @@ alias ssh-prod='ssh deployer@api.asknative.com'     # 162.242.220.177
 alias ssh-stag='ssh deployer@staging.asknative.com' # 162.242.233.158
 alias ssh-blog='ssh ghost@journey.asknative.com'    # 162.242.243.203
 
-#
-# RBENV
-#
-alias evars='vim ~/.rbenv/vars'
-alias pvars='rbenv vars'
-alias ruby-list='rbenv install --list'
-
-#
-# BUNDLER
-#
-alias be='bundle exec'
-alias bi='bundle install'
-alias bil='bundle install --local'
-alias bl='bundle list'
-alias bu='bundle update'
-alias bp='bundle package'
-
-#
-# RAILS
-#
-alias ts='thin start'     # thin server
-alias fs='foreman start'
-alias fd='foreman start -f Procfile.dev'
-alias devlog='tail -f log/development.log'
-alias taild='tail -f log/development.log' # tail dev log
-alias ccache='rm -rf tmp/cache/'
-
-#
-# MINA
-#
-alias mds='mina stag deploy'
-alias mdp='mina prod deploy'    # P.S. Append `force_assets=1` to force asset compilation
-
-alias mdus='mina stag deploy:force_unlock'
-alias mdup='mina prod deploy:force_unlock'
-
-alias mls='mina stag logs'
-alias mlp='mina prod logs'
-
-alias mvs='mina stag vars'
-alias mvp='mina prod vars'
-
-alias mcs='mina stag console'
-alias mcp='mina prod console'
-
-#
-# GRUNT
-#
-alias gs='grunt server'
-alias gsf='grunt server --force'        # Force running server
-alias gb='grunt build'                  # Build production version
-alias gbs='grunt server:dist'           # Build production version and run locally
-
-#
-# BOWER
-#
-alias boi='bower install'               # Install
-alias bois='bower install --save'       # Install and Save
-alias bou='bower update'                # Update packages
-alias bol='bower list'                  # Bower list packages
-
-#
-# NPM
-#
-alias ns='npm start'                    # Start
-alias nt='npm test'                     # Run test
-alias nd='npm run-script debug'         # Start in debug mode
-alias ni='npm install'                  # Install
-alias nig='npm install -g'              # Install global (For commandline tools)
-alias nis='npm install --save'          # Install and save
-alias nid='npm install --save-dev'      # Install and save as development dependency
-alias nisd='nid'
-
-
-
-#
-# BREW
+# brew
 #
 # alias bup='brew update ;and brew upgrade'
 # alias bout='brew outdated'
@@ -109,7 +48,12 @@ alias nisd='nid'
 # alias binf='brew info'
 # alias bdr='brew doctor'
 
+# git
 #
+# ...
+alias gdt='git push origin'
+alias gph='git push heroku master'                  # Push on heroku master
+
 # Heroku
 #
 # alias h='heroku'
@@ -143,15 +87,115 @@ alias nisd='nid'
 # alias hcr='heroku config:remove'
 # alias hcc='heroku config:clear'
 
+
+
+#############################
+# Ruby                      #
+#############################
+
+# rbenv
 #
-# MISC
+alias pvars='rbenv vars'
+alias evars='vim ~/.rbenv/vars'
+alias ruby-versions='rbenv install --list'
+alias rbenv-versions='rbenv install --list'
+
+# bundler
+#
+alias be='bundle exec'
+alias bi='bundle install'
+alias bil='bundle install --local'
+alias bl='bundle list'
+alias bu='bundle update'
+alias bp='bundle package'
+
+# rails
+#
+alias ts='thin start'                             # Run thin server
+alias ccache='rm -rf tmp/cache/'                  # Clear cache
+alias devlog='tail -f log/development.log'        # Tail development log
+alias taild='tail -f log/development.log'         # Tail development log
+alias reindex='rake db:mongoid:create_indexes'    # Reindex on mongoid
+
+# foreman
+#
+alias fs='foreman start'                          # Run foreman server
+alias fd='foreman start -f Procfile.dev'          # Run foreman server as development
+
+# zeus
+#
+alias zs='zeus start'                             # Start zeus
+alias zt='zeus t spec/'                           # Run test with zeus
+
+# mina
+#
+alias mds='mina stag deploy'                      # Deploy on staging server
+alias mdp='mina prod deploy'                      # Deploy on production server
+alias mdpf='mdp force_assets=1'                   # Force asset compilation
+alias mdus='mina stag deploy:force_unlock'
+alias mdup='mina prod deploy:force_unlock'
+alias mls='mina stag logs'                        # Run logs on staging server
+alias mlp='mina prod logs'                        # Run logs on production server
+alias mvs='mina stag vars'                        # Print env variables on staging server
+alias mvp='mina prod vars'                        # Print env variables on production server
+alias mcs='mina stag console'                     # Run console on staging server
+alias mcp='mina prod console'                     # Run console on production server
+
+
+
+#############################
+# Node.js                   #
+#############################
+
+# npm
+#
+alias ns='npm start'                              # Run server
+alias nt='npm test'                               # Run test
+alias nd='npm run-script debug'                   # Start in debug mode
+alias ni='npm install'                            # Install
+alias nig='npm install -g'                        # Install global (For commandline tools)
+alias nis='npm install --save'                    # Install and save
+alias nid='npm install --save-dev'                # Install and save as development dependency
+alias nisd='nid'
+
+# bower
+#
+alias boi='bower install'                         # Install
+alias bois='bower install --save'                 # Install and Save
+alias bou='bower update'                          # Update packages
+alias bol='bower list'                            # Bower list packages
+
+# ember
+#
+alias es='ember serve'                            # Runs ember server
+alias esp='ember serve --environment production'  # Runs ember server as production
+alias eb='ember build --environment production'   # Build app for production
+alias et='ember test'                             # Runs ember test
+
+# grunt
+#
+alias gs='grunt server'                           # Run server
+alias gsf='grunt server --force'                  # Force running server
+alias gb='grunt build'                            # Build production version
+alias gbs='grunt server:dist'                     # Build production version and run locally
+
+
+
+#############################
+# Misc
+#############################
+
+# General
 #
 alias ca='clear all'
-alias gph='git push heroku master' # Push on heroku master
+alias simple-server='python -m SimpleHTTPServer 9000'
+alias count-files='find -P . -type f | rev | cut -d/ -f2- | rev | cut -d/ -f1-2 | cut -d/ -f2- | sort | uniq -c'
+
+# OSX
+#
 alias empty-trash='sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash'
 alias flush-dns='dscacheutil -flushcache'
-alias simple-server='python -m SimpleHTTPServer 9000'
+alias redis-config='redis-server /usr/local/etc/redis.conf'
 alias hide-desktop='defaults write com.apple.finder CreateDesktop -bool false ;and killall Finder'
 alias show-desktop='defaults write com.apple.finder CreateDesktop -bool true ;and killall Finder'
 alias disable-longpress-subl='defaults write com.sublimetext.3 ApplePressAndHoldEnabled -bool false'
-alias count-files='find -P . -type f | rev | cut -d/ -f2- | rev | cut -d/ -f1-2 | cut -d/ -f2- | sort | uniq -c'
