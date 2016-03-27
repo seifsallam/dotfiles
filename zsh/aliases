@@ -30,12 +30,17 @@ alias evim="vim ~/.vimrc"
 
 # SSH
 #
+# asknative
 # alias ssh-aws 'ssh deployer@ec2-54-200-64-10.us-west-2.compute.amazonaws.com'
 # alias ssh-aws-admin 'ssh -i ~/aws-asknative.pem ubuntu@ec2-54-200-64-10.us-west-2.compute.amazonaws.com'
 alias ssh-webapp='ssh deployer@asknative.com'       # 162.242.239.137
 alias ssh-prod='ssh deployer@api.asknative.com'     # 162.242.220.177
 alias ssh-stag='ssh deployer@staging.asknative.com' # 162.242.233.158
 alias ssh-blog='ssh ghost@journey.asknative.com'    # 162.242.243.203
+# StreamCity
+alias ssh-radio='ssh deployer@104.130.5.69'
+alias ssh-cache='ssh deployer@162.242.251.42'
+alias ssh-streamer='ssh -i ~/.ssh/streamer.pem seif@52.28.25.135'
 
 # brew
 #
@@ -53,6 +58,7 @@ alias ssh-blog='ssh ghost@journey.asknative.com'    # 162.242.243.203
 # ...
 alias gdt='git push origin'
 alias gph='git push heroku master'                  # Push on heroku master
+alias glog='git log --oneline --decorate'           # Shows git log. Specify range and set output using => v2.1.0...master > CHANGELOG
 
 # Heroku
 #
@@ -125,7 +131,7 @@ alias fd='foreman start -f Procfile.dev'          # Run foreman server as develo
 # zeus
 #
 alias zs='zeus start'                             # Start zeus
-alias zt='zeus t spec/'                           # Run test with zeus
+alias zt='zeus t'                                 # Run test with zeus
 
 # mina
 #
@@ -141,6 +147,11 @@ alias mvp='mina prod vars'                        # Print env variables on produ
 alias mcs='mina stag console'                     # Run console on staging server
 alias mcp='mina prod console'                     # Run console on production server
 
+# Middleman
+#
+alias mm='bundle exec middleman'
+alias mms='bundle exec middleman server'
+alias mmb='bundle exec middleman build' 
 
 
 #############################
@@ -157,6 +168,7 @@ alias nig='npm install -g'                        # Install global (For commandl
 alias nis='npm install --save'                    # Install and save
 alias nid='npm install --save-dev'                # Install and save as development dependency
 alias nisd='nid'
+alias nv="cat ./package.json | grep 'version' | sed 's/[^0-9\.]//g'" # Extracts package version number
 
 # bower
 #
@@ -171,6 +183,10 @@ alias es='ember serve'                            # Runs ember server
 alias esp='ember serve --environment production'  # Runs ember server as production
 alias eb='ember build --environment production'   # Build app for production
 alias et='ember test'                             # Runs ember test
+alias ets='ember test --server'                   # Keeps server running for tests
+alias ed='ember deploy --environment production'
+alias eda='ember deploy:activate --environment production --revision'
+alias edl='ember deploy:list --environment production'
 
 # grunt
 #

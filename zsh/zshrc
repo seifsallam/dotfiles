@@ -49,10 +49,11 @@ DEFAULT_USER='seif'
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # plugins=(bower brew bundler common-aliases gem git gitfast git-extras git-flow last-working-dir lol osx npm rails3 redis-cli ruby sublime zeus)
-plugins=(brew gem git gitfast git-extras last-working-dir osx node npm rails redis-cli ruby sublime web-search wd zeus zsh-syntax-highlighting)
+plugins=(brew gem git gitfast git-extras osx terminalapp node npm rails redis-cli ruby sublime web-search wd zeus zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 # source ~/.nvm/nvm.sh
+source $(brew --prefix nvm)/nvm.sh
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 # source $(brew --prefix nvm)/nvm.sh
 
@@ -91,3 +92,6 @@ ulimit -n 1200
 
 # Set default node.js version
 # nvm use 0.10.26
+
+PERL_MB_OPT="--install_base \"/Users/seif/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/seif/perl5"; export PERL_MM_OPT;

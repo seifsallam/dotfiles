@@ -1,13 +1,13 @@
 
-blog:/Users/seif/projects/asknative/blog
-webapp:/Users/seif/projects/asknative/webapp
-backend:/Users/seif/projects/asknative/backend
+asknative-blog:/Users/seif/projects/asknative/blog
+asknative-webapp:/Users/seif/projects/asknative/webapp
+asknative-backend:/Users/seif/projects/asknative/backend
 ember-uploader:/Users/seif/projects/ember-uploader
-server:/Users/seif/projects/asknative/server
+asknative-server:/Users/seif/projects/asknative/server
 eak:/Users/seif/projects/ember-app-kit
 medium-editor:/Users/seif/projects/medium-editor
-landing:/Users/seif/projects/landing
-blank-css:/Users/seif/projects/blank-css
+my-website:/Users/seif/projects/seifsallam/website
+my-portfolio:/Users/seif/projects/seifsallam/portfolio
 ssh:/Users/seif/.ssh
 drpbx:/Users/seif/Dropbox
 dsktp:/Users/seif/Desktop
@@ -15,7 +15,10 @@ docs:/Users/seif/Documents
 dwnlds:/Users/seif/Downloads
 prjkts:/Users/seif/Projects
 dotfiles:/Users/seif/Projects/dotfiles
-radio-one:/Users/seif/Projects/radio-one
-radio-streamer:/Users/seif/Projects/radio-one-streamer
+streamcity-api:/Users/seif/Projects/radio-one
+streamcity-streamer:/Users/seif/Projects/radio-one-streamer
+streamcity-admin:/Users/seif/Projects/radio-one-admin
 crossfit:/Users/seif/Projects/crossfit-scheduler
-
+atom-ember-snippets:/Users/seif/Projects/atom-ember-snippets
+opsworks:/Users/seif/VM/opsworks
+evelo-buyers-guide-landing-page:/Users/seif/Projects/evelo/buyers-guide/landing-page
